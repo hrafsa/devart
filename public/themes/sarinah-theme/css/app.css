@@ -61739,6 +61739,10 @@ h3 {
     }
   }
 
+  .md\:width-40-percent {
+    width: 40%;
+  }
+
   .md\:sr-only {
     position: absolute;
     width: 1px;
