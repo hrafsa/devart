@@ -1,29 +1,38 @@
+:root {
+    --sarinah-red: #C8102E;
+    --sarinah-red-hover: #A50D26;
+    --sarinah-white: #FFFFFF;
+    --sarinah-dark: #2C2C2C;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 .bg-dark-gray {
     background-color: rgb(44 44 44 / 0.8);
 }
 
 .text-red {
-    color: #C8102E;
+    color: var(--sarinah-red);
 }
 
 .bg-red {
-    background-color: #C8102E;
+    background-color: var(--sarinah-red);
 }
 
 .border-red {
-    border-color: #C8102E;
+    border-color: var(--sarinah-red);
 }
 .bg-red-hover:hover  {
-    background-color: #a50d26;
+    background-color: var(--sarinah-red-hover);
 }
 .text-red-hover:hover {
-    color: #C8102E;
+    color: var(--sarinah-red-hover);
 }
-
+.bg-dark {
+    background-color: var(--sarinah-dark);
+}
 
 .bg-gray-hover:hover {
     background-color: #3a3a3a;
@@ -37,11 +46,6 @@
     border-color: rgba(200, 16, 46, 0.3);
 }
 
-:root {
-    --sarinah-red: #c8102e;
-    --sarinah-white: #ffffff;
-    --sarinah-dark: #2c2c2c;
-}
 
 body {
     font-family: "Poppins", sans-serif;
@@ -241,4 +245,8 @@ h3 {
     border-radius: 4px;
     font-size: 12px;
     font-weight: 500;
+}
+
+.ratio-16-9 {
+    aspect-ratio: 16 / 9;
 }

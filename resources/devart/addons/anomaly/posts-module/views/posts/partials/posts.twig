@@ -1,0 +1,26 @@
+{% for post in posts %}
+
+	<div class="gallery-card rounded-xl bg-white shadow-md overflow-hidden fade-in flex flex-col h-full" style="animation-delay: 0.1s">
+		<div class="card-image">
+			<img src="{{ url('files/' ~ post.cover_gallery.path) }}">
+		</div>
+		<div class="card-content p-6 flex flex-col flex-1">
+			<div class="flex justify-between items-center mb-3">
+				<h3 class="text-xl font-semibold text-[#2C2C2C]">
+					{{post.title}}
+				</h3>
+			</div>
+			<div class="flex-1">
+				{% if post.summary.value %}
+					<p class="text-sm text-gray-600 mb-6">{{ post.summary|nl2br|raw }}</p>
+				{% endif %}
+			</div>
+			<div class="mt-auto">
+				<a href="{{ post.route('view') }}">
+					
+				<button class="btn-view btn-action bg-red bg-red-hover text-white font-medium py-2 px-4 rounded-lg text-sm transition w-full">Lihat Selengkapnya</button>
+				</a>
+			</div>
+		</div>
+	</div>
+{% endfor %}

@@ -1,38 +1,39 @@
-{% htmlcompress %}
-<!doctype html>
-
-<!--[if lt IE 7]>
-<html class="nojs ms lt_ie7" lang="en"><![endif]-->
-<!--[if IE 7]>
-<html class="nojs ms ie7" lang="en"><![endif]-->
-<!--[if IE 8]>
-<html class="nojs ms ie8" lang="en"><![endif]-->
-<!--[if gt IE 8]>
-<html class="nojs ms" lang="en"><![endif]-->
-
+<!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
-
-<head>
-    {% include "theme::partials/metadata" %}
-</head>
-
-<body>
-
-{% include "theme::partials/header" %}
-
-<main id="main">
-    <div class="container">
-
-        {% include "theme::partials/messages" %}
-
-        {% block content %}{% endblock %}
-
-    </div>
-</main>
-
-{% include "theme::partials/footer" %}
-{% include "theme::partials/assets" %}
-
-</body>
+	<head>
+		{% block metadata %}
+			{% include "theme::partials/metadata" %}
+		{% endblock %}
+	</head>
+	<body class="bg-dark text-white">
+		<div id="content" class="relative w-full min-h-screen flex flex-col justify-center items-center batik-pattern overflow-x-hidden">
+			{% include "theme::partials/navigation" %}
+			<div class="absolute inset-0 batik-overlay"></div>
+			<section id="gallery" class="py-16 md:py-24 z-10">
+				<div class="container mx-auto px-6">
+					<div class="text-center mb-16">
+						{% if app.request.path starts with 'posts/tags/' %}
+							<h2 class="text-3xl md:text-4xl font-bold inline-block section-title">
+								Gallery Tag: {{ tag }}
+							</h2>
+						{% else %}
+							<h2 class="text-3xl md:text-4xl font-bold inline-block section-title">
+								Gallery Sarinah
+							</h2>
+							<p class="mt-6 text-lg max-w-2xl mx-auto">
+								Setiap produk memiliki cerita dan makna yang mendalam, mencerminkan
+								kekayaan budaya dan keahlian pengrajin lokal Indonesia.
+							</p>
+						{% endif %}
+					</div>
+					<div
+						class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+						{# {% include "theme::partials/posts" %} #}
+						{% block content %}{% endblock %}
+					</div>
+				</div>
+				{% include "theme::partials/footer" %}
+			</section>
+		</div>
+	</body>
 </html>
-{% endhtmlcompress %}
