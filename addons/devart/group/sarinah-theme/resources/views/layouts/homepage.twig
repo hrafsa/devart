@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="{{ config('app.locale') }}">
+
+    <head>
+        {% block metadata %}
+            {% include "theme::partials/metadata" %}
+        {% endblock %}
+    </head>
+
+    <body class="bg-dark-gray text-white">
+
+        <div id="content" class="relative w-full min-h-screen flex flex-col justify-center items-center batik-pattern overflow-x-hidden">
+            {% include "theme::partials/navigation" %}
+            <div class="absolute inset-0 batik-overlay"></div>
+            <div class="container mx-auto px-4 py-6 z-10">
+                <div class="logo-container md:mb-6 mb-2 text-center">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-red fade-in">
+                        Art Sarinah
+                    </h2>
+                </div>
+
+                <div
+                    class="content-container flex flex-col lg:flex-row gap-6 lg:gap-0 w-full">
+                    <!-- Left Content -->
+                    <div class="content-left w-full lg:w-1/2 p-4 fade-in">
+                        <h1 class="text-2xl sm:text-4xl font-bold mb-6 leading-tight">
+                            {% block content_title %}
+                                Kenali Produk Lokal Kami di Sarinah
+                            {% endblock %}
+                        </h1>
+
+                        <p class="text-base sm:text-lg mb-8 text-gray-100 leading-relaxed">
+                            {% block content_description %}
+                                Scan QR code pada produk untuk informasi lengkap, cerita di
+                                                baliknya, dan keunikan budaya lokal.
+                            {% endblock %}
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 fade-in-delay-1">
+                            {% block content_actions %}
+                                <a href="{{ url_route('anomaly.module.pages::pages.view', {'path': 'products'}) }}" class="btn-action bg-red bg-red-hover text-white font-medium py-3 px-6 rounded-lg text-lg shadow-lg transform transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red focus:ring-opacity-50">
+                                    Telusuri Produk
+                                </a>
+                                <a href="{{ url_route('anomaly.module.pages::pages.view', {'path': 'scan'}) }}" class="btn-action bg-dark-gray border-2 border-red bg-gray-hover text-white font-medium py-3 px-6 rounded-lg text-lg shadow-lg transform transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red focus:ring-opacity-50">
+                                    Scan QR
+                                </a>
+                            {% endblock %}
+                        </div>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="content-right w-full lg:w-1/2 p-4 fade-in-delay-2">
+                        <div class="bg-dark-gray p-6 rounded-lg border border-red-opacity backdrop-blur-sm">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-4 text-red">
+                                {% block sidebar_title %}
+                                    Cara Penggunaan
+                                {% endblock %}
+                            </h3>
+
+                            <div class="space-y-6 mt-6">
+                                {% block usage_steps %}
+                                    <div class="step-item pb-6">
+                                        <h4 class="font-semibold text-base sm:text-lg">
+                                            Buka Website
+                                        </h4>
+                                        <p class="text-gray-300 text-sm sm:text-base">
+                                            Kunjungi art.sarinah.com melalui browser Anda
+                                        </p>
+                                    </div>
+
+                                    <div class="step-item pb-6">
+                                        <h4 class="font-semibold text-base sm:text-lg">
+                                            Klik Tombol "Scan QR"
+                                        </h4>
+                                        <p class="text-gray-300 text-sm sm:text-base">
+                                            Tekan tombol Scan QR di halaman utama
+                                        </p>
+                                    </div>
+
+                                    <div class="step-item">
+                                        <h4 class="font-semibold text-base sm:text-lg">
+                                            Scan Kode QR pada Produk
+                                        </h4>
+                                        <p class="text-gray-300 text-sm sm:text-base">
+                                            Arahkan kamera ke kode QR yang tertera pada produk untuk
+                                                                melihat informasi lengkap
+                                        </p>
+                                    </div>
+                                {% endblock %}
+                            </div>
+
+                            <div class="mt-8 text-center">
+                                <div class="inline-flex items-center justify-center p-3 bg-red-opacity rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                {% include "theme::partials/footer" %}
+            </div>
+        </div>
+
+
+    </body>
+
+</html>

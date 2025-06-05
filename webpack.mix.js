@@ -11,5 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.postCss(
+  'addons/devart/group/sarinah-theme/resources/css/app.css',
+  'public/themes/sarinah-theme/css',
+  [
+    require('tailwindcss'),
+  ]
+);

@@ -1,0 +1,17 @@
+<nav class="pb-4 flex justify-center items-center text-white text-lg z-20">
+	{{ structure()
+    .linkAttributesDropdown({'data-toggle': 'dropdown'})
+    .listClass('flex space-x-8 md:mt-4 mt-6')
+    .childListClass('dropdown-menu')
+    .itemClass('text-red-hover transition')
+    .cache({'namespace': 'user'})
+    .render()|raw 
+    }}
+	<ul class="flex space-x-8 md:mt-4 mt-6">
+        {#
+        #}
+		<li class="ml-8 text-red-hover transition">
+			<a href="{{ url_route('anomaly.module.posts::posts.index') }}">Posts</a>
+		</li>
+	</ul>
+</nav>
