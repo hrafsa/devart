@@ -1,12 +1,12 @@
 {% for post in posts %}
 
 	<div class="gallery-card rounded-xl bg-white shadow-md overflow-hidden fade-in flex flex-col h-full" style="animation-delay: 0.1s">
-		<div class="card-image">
-			<img src="{{ url('files/' ~ post.cover_gallery.path) }}">
-		</div>
+        <div class="card-image h-48 overflow-hidden">
+            <img src="{{ url('files/' ~ post.cover.path) }}" class="w-full h-full object-cover">
+        </div>
 		<div class="card-content p-6 flex flex-col flex-1">
 			<div class="flex justify-between items-center mb-3">
-				<h3 class="text-xl font-semibold text-[#2C2C2C]">
+				<h3 class="text-xl font-semibold text-dark">
 					{{post.title}}
 				</h3>
 			</div>

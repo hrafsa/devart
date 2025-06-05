@@ -3,13 +3,14 @@
 
 	<head>
 		{% block metadata %}
-			{% include "theme::partials/metadata" %}
+			{% include "theme::partials/metadata-singlepost" %}
 		{% endblock %}
 	</head>
 
 	<body>
         {% block content %}{% endblock %}
-
+		<!-- Footer -->
+        {% include "theme::partials/footer" %}
 	</body>
 
 </html>

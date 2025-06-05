@@ -1,16 +1,18 @@
 {% extends post.type.theme_layout.key %}
 
 {% block content %}
-	<body class="text-white bg-dark h-screen leading-relaxed relative overflow-y-auto batik-pattern">
-		<div class="absolute inset-0 batik-overlay z-0"></div>
-		<header class="flex items-center justify-between mb-8 px-5 py-4 relative z-20">
-			<div
+	<body class="text-white bg-dark min-h-screen leading-relaxed relative overflow-y-auto batik-pattern">
+		<div class="absolute inset-0 batik-overlay z-0 min-h-screen"></div>
+		<header class="flex items-center justify-between py-6 relative z-20 fade-in-delay-2 pb-4 px-6 sm:px-8 ">
+            <div
 				class="mr-4 text-white cursor-pointer">
 				<!-- back icon -->
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M19 12H5"></path>
-					<path d="M12 19l-7-7 7-7"></path>
-				</svg>
+				<a href="{{ url_route('anomaly.module.posts::posts.index') }}">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M19 12H5"></path>
+						<path d="M12 19l-7-7 7-7"></path>
+					</svg>
+				</a>
 			</div>
 			<h1 class="text-xl font-bold">Art Sarinah</h1>
 			<div
@@ -22,83 +24,18 @@
 				</svg>
 			</div>
 		</header>
-		<main class="pb-4 px-4 sm:px-8 relative z-10">
+		<main class="pb-4 px-4 sm:px-8 relative z-10 fade-in-delay-2">
 			<article class="sm:px-20 px-2 py-4 article-content">
 				<h1 class="text-2xl text-center font-bold mb-4">
-					Batik Parang: Warisan Budaya Indonesia yang Penuh Makna dan Filosofi
+					{{ post.header}}
 				</h1>
-				<div class="float-none md:float-left md:w-40-percent md:mr-4 overflow-hidden mb-4">
-					<iframe class="w-full ratio-16-9 rounded-lg object-cover pointer-events-none" src="https://www.youtube.com/embed/QJ0ZNnzK7WI?playlist=QJ0ZNnzK7WI&autoplay=1&loop=1&controls=0&modestbranding=1&playsinline=1&rel=0&mute=1" title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<div class="float-none md:float-left md:width-40-percent md:mr-4 overflow-hidden mb-4">
+					<iframe class="w-full ratio-16-9 rounded-lg object-cover pointer-events-none" src="{{ post.youtube.value ~ '?playlist=' ~ (post.youtube.value | split('/') | last) ~ '&autoplay=1&loop=1&controls=0&modestbranding=1&playsinline=1&rel=0&mute=1' }}" title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 				</div>
-				<div class="text-justify text-[1.05rem]">
-					<p>
-						Batik Parang adalah salah satu motif batik tertua dan paling
-						            terkenal di Indonesia. Motif ini berasal dari Keraton Yogyakarta dan
-						            memiliki sejarah panjang yang terkait erat dengan kebudayaan Jawa.
-						            Kata "parang" berasal dari kata "pereng" yang berarti lereng atau
-						            tebing yang berbentuk diagonal.
-					</p>
-
-					<blockquote>
-						"Batik Parang adalah simbol kekuatan, ketahanan, dan kontinuitas
-						            kehidupan. Motif ini mengajarkan kita untuk tetap tegar dan
-						            bersemangat meskipun menghadapi berbagai rintangan."
-					</blockquote>
-					<p>
-						Motif ini terinspirasi dari bentuk ombak laut yang tidak pernah
-						            berhenti bergerak, melambangkan semangat yang tidak pernah padam.
-						            Konon, motif ini diciptakan oleh Sultan Agung Hanyokrokusumo, raja
-						            Mataram, saat beliau sedang bermeditasi di tepi pantai selatan Pulau
-						            Jawa.
-					</p>
-
-					<p>
-						Pada masa lalu, motif Parang merupakan
-						<span class="highlight">motif larangan atau pola batik yang hanya boleh dikenakan oleh
-							              keluarga kerajaan</span>. Pelanggaran terhadap aturan ini bisa berakibat hukuman berat. Hal
-							            ini menunjukkan betapa pentingnya motif ini dalam hierarki sosial
-							            masyarakat Jawa tradisional.
-					</p>
-					<h2>Filosofi dan Makna</h2>
-					<p>
-						Motif Parang memiliki filosofi yang sangat dalam dalam budaya Jawa.
-						            Pola diagonal yang berkesinambungan melambangkan ombak lautan yang
-						            tak pernah berhenti bergerak, menggambarkan semangat yang tak pernah
-						            padam dan kontinuitas kehidupan. Beberapa makna filosofis dari motif
-						            Parang antara lain: kekuatan dan ketahanan, kontinuitas dan
-						            keberlanjutan, kewibawaan dan status, serta hubungan dengan alam.
-					</p>
-
-					<p>
-						Terdapat berbagai variasi motif Parang, seperti Parang Rusak (paling
-						            sakral, hanya untuk raja), Parang Barong (ukuran besar, simbol
-						            keagungan), Parang Klithik (ukuran kecil, untuk bangsawan menengah),
-						            dan Parang Kusumo (gabungan dengan motif bunga).
-					</p>
-
-					<p>
-						Saat ini, batik Parang tidak lagi menjadi motif larangan dan dapat
-						            dikenakan oleh siapa saja. Motif ini telah menjadi salah satu ikon
-						            batik Indonesia yang dikenal secara global. Pada tahun 2009, UNESCO
-						            mengakui batik Indonesia sebagai Warisan Budaya Tak Benda
-						            Kemanusiaan, yang semakin menegaskan pentingnya melestarikan seni
-						            batik, termasuk motif Parang yang ikonik ini.
-					</p>
-
-					<p>
-						Batik Parang bukan sekadar motif dekoratif, tetapi merupakan warisan
-						            budaya yang kaya akan filosofi dan sejarah. Dari motif kerajaan yang
-						            eksklusif, kini batik Parang telah menjadi simbol identitas nasional
-						            Indonesia yang dikenal di seluruh dunia.
-					</p>
-
-					<p>
-						Sebagai generasi penerus, kita memiliki tanggung jawab untuk
-						            melestarikan dan mengapresiasi warisan budaya ini, sambil tetap
-						            membuka ruang untuk inovasi dan interpretasi baru yang sesuai dengan
-						            perkembangan zaman. Dengan memahami makna dan filosofi di balik
-						            motif Parang, kita dapat lebih menghargai kekayaan budaya Indonesia.
-					</p>
+				<div class="text-justify text-base">
+					{% block post %}
+						{{ content|raw }}
+					{% endblock %}
 				</div>
 			</article>
 		</main>
