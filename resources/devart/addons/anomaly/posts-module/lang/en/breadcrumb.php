@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'posts'   => 'Posts',
+    'posts'   => 'Gallery',
     'fields'  => 'Fields',
     'archive' => 'Archive',
     'tagged'  => 'Tagged ":tag"',

@@ -3,11 +3,6 @@
 {% block content %}
     <div id="posts">
         <div class="container">
-
-            <header class="jumbotron text-center">
-                <h1>{{ trans('anomaly.module.posts::message.tagged', {'tag': tag}) }}</h1>
-            </header>
-
             {% set posts = entries('posts').whereTags('LIKE', '%"' ~ route_parameter('tag') ~ '"%').paginate() %}
 
             {% include "anomaly.module.posts::posts/partials/posts" with {"posts": posts} %}

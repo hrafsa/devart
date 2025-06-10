@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'title'       => 'Posts',
-    'name'        => 'Posts Module',
-    'description' => 'A versatile articles and posts manager.',
+    'title'       => 'Gallery',
+    'name'        => 'Gallery Module',
+    'description' => 'A versatile articles and Gallery manager.',
     'section'     => [
-        'posts'       => 'Posts',
+        'posts'       => 'Gallery',
         'types'       => 'Types',
         'fields'      => 'Fields',
         'categories'  => 'Categories',
