@@ -1,0 +1,9 @@
+{
+    "name": "group/sarinahadmin-theme",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Group\\SarinahadminTheme\\": "src/"
+        }
+    }
+}

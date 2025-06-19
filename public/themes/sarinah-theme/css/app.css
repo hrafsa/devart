@@ -31306,6 +31306,27 @@ video {
   transition: all 0.4s ease;
 }
 
+.btn-login {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.btn-login:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.6s ease;
+}
+
+.btn-login:hover:before {
+  left: 100%;
+}
+
 .btn-action:before {
   content: "";
   position: absolute;
@@ -31504,6 +31525,34 @@ video {
   padding: 0.125rem 0.25rem;
   border-radius: 0.25rem;
   font-weight: 600;
+}
+
+.focus-ring-red {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(var(--sarinah-red), var(--tw-ring-opacity));
+}
+
+.login-card {
+  background: rgba(44, 44, 44, 0.85);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(200, 16, 46, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.input-field {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--sarinah-red);
+}
+
+.input-icon {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 @media (min-width: 640px) {
